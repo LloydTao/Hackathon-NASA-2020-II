@@ -8,6 +8,6 @@ from .viewsets import UserViewSet
 # Take care when naming API routes.
 # https://restfulapi.net/resource-naming/
 router = routers.DefaultRouter()
-router.register(r"accounts/users", UserViewSet)
+router.register(r"users", UserViewSet)
 
 urlpatterns = []
