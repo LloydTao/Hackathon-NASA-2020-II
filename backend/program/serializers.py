@@ -7,6 +7,7 @@ class ProgramSerializer(serializers.HyperlinkedModelSerializer):
     class Meta:
         model = Program
         fields = [
+            "url",
             "id",
             "title",
         ]
