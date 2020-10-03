@@ -41,17 +41,17 @@ class GetProgramsTestCase(TestCase):
                 {
                     "url": "http://testserver/api/programs/1/",
                     "id": 1,
-                    "title"="Space Mission Alpha",
+                    "title": "Space Mission Alpha",
                 },
                 {
                     "url": "http://testserver/api/programs/2/",
                     "id": 2,
-                    "title"="Mission 2: Electric Boogaloo",
+                    "title": "Mission 2: Electric Boogaloo",
                 },
                 {
                     "url": "http://testserver/api/programs/3/",
                     "id": 3,
-                    "title"="Space: Episode III - Revenge of the Sith",
+                    "title": "Space: Episode III - Revenge of the Sith",
                 },
             ],
         )
