@@ -1,0 +1,123 @@
+[
+   {
+      "model":"accounts.user",
+      "pk":1,
+      "fields":{
+         "password":"pbkdf2_sha256$216000$Y14f2kqOXWBC$/RhUmPMJC2INu/RbxErkP0VphwD4Rn2f//CtQupddzE=",
+         "last_login":"2020-10-04T20:00:00Z",
+         "is_superuser":false,
+         "username":"SpaceDragon53",
+         "first_name":"Space",
+         "last_name":"Dragon",
+         "email":"SpaceDragon53@nasa.co.uk",
+         "is_staff":true,
+         "is_active":true,
+         "date_joined":"2020-10-04T12:00:00Z",
+         "groups":[
+            
+         ],
+         "user_permissions":[
+            
+         ]
+      }
+   },
+   {
+      "model":"accounts.user",
+      "pk":2,
+      "fields":{
+         "password":"pbkdf2_sha256$216000$DfYqKFMjolqT$cFZ0UdVccREaGAnLa8vw1Y+zOkQB8QnW1MrETXLQ3qM=",
+         "last_login":"2020-10-04T20:00:00Z",
+         "is_superuser":false,
+         "username":"StarFeind357",
+         "first_name":"Star",
+         "last_name":"Feind",
+         "email":"StarFeind357@nasa.co.uk",
+         "is_staff":true,
+         "is_active":true,
+         "date_joined":"2020-10-04T12:00:00Z",
+         "groups":[
+            
+         ],
+         "user_permissions":[
+            
+         ]
+      }
+   },
+   {
+      "model":"program.program",
+      "pk":1,
+      "fields":{
+         "title":"Mission to Mars"
+      }
+   },
+   {
+      "model":"program.program",
+      "pk":2,
+      "fields":{
+         "title":"Earth Explorers II"
+      }
+   },
+   {
+      "model":"schedule.schedule",
+      "pk":1,
+      "fields":{
+         "user":1,
+         "program":1,
+         "start_date":"2020-11-05T08:00:00Z",
+         "end_date":"2020-12-05T20:00:00Z"
+      }
+   },
+   {
+      "model":"schedule.schedule",
+      "pk":2,
+      "fields":{
+         "user":2,
+         "program":1,
+         "start_date":"2020-11-05T08:00:00Z",
+         "end_date":"2020-12-05T20:00:00Z"
+      }
+   },
+   {
+      "model":"schedule.schedule",
+      "pk":3,
+      "fields":{
+         "user":1,
+         "program":2,
+         "start_date":"2020-10-01T08:00:00Z",
+         "end_date":"2020-10-15T20:00:00Z"
+      }
+   },
+   {
+      "model":"event.event",
+      "pk":1,
+      "fields":{
+         "title":"Sleep Event 1",
+         "type":"Sleep",
+         "schedule":1,
+         "start_time":"2020-10-05T00:00:00Z",
+         "end_time":"2020-10-05T08:00:00Z"
+      }
+   },
+   {
+      "model":"event.event",
+      "pk":2,
+      "fields":{
+         "title":"Sleep Event 2",
+         "type":"Sleep",
+         "schedule":1,
+         "start_time":"2020-10-06T00:00:00Z",
+         "end_time":"2020-10-06T08:00:00Z"
+      }
+   },
+   {
+      "model":"event.event",
+      "pk":3,
+      "fields":{
+         "title":"Sleep Event 0",
+         "type":"Sleep",
+         "schedule":1,
+         "start_time":"2020-10-04T00:00:00Z",
+         "end_time":"2020-10-04T08:00:00Z"
+      }
+   }
+]
