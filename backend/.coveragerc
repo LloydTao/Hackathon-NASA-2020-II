@@ -1,6 +1,6 @@
 [run]
 branch = true
-omit = */wsgi.py, */asgi.py, manage.py, */.env/*
+omit = */wsgi.py, */asgi.py, manage.py
 source = .
 
 [report]

@@ -38,7 +38,6 @@ INSTALLED_APPS = [
     "django.contrib.messages",
     "django.contrib.staticfiles",
     "accounts.apps.AccountsConfig",
-    "event.apps.EventConfig",
     "program.apps.ProgramConfig",
     "schedule.apps.ScheduleConfig",
     "rest_framework",
