@@ -24,11 +24,3 @@ class LogoutView(APIView):
     def get(self, request):
         logout(request)
         return Response(status=200)
-
-
-class CheckLogin(APIView):
-    def get(self, request):
-        if request.user is not None:
-            return Response({"Response": "Yes"}, status=200)
-        else:
-            return Response({"Response": "No"}, status=200)

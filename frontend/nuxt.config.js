@@ -38,10 +38,14 @@ export default {
     // https://go.nuxtjs.dev/content
     '@nuxt/content',
   ],
-
   // Axios module configuration (https://go.nuxtjs.dev/config-axios)
-  axios: {},
+  axios: {
+    proxy: true,
+  },
 
+  proxy: {
+    '/api/': { target: 'http://localhost:8000' },
+  },
   // Content module configuration (https://go.nuxtjs.dev/content-config)
   content: {},
 

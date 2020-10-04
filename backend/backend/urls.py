@@ -22,7 +22,7 @@ from accounts.urls import router as accounts_router
 from program.urls import router as program_router
 from schedule.urls import router as schedule_router
 
-from accounts.views import LoginView, CheckLogin, LogoutView
+from accounts.views import LoginView, LogoutView
 
 router = routers.DefaultRouter()
 router.registry.extend(accounts_router.registry)
@@ -31,7 +31,6 @@ router.registry.extend(schedule_router.registry)
 
 urlpatterns = [
     path("api/login/", LoginView.as_view(), name="login"),
-    path("api/test/", CheckLogin.as_view()),
     path("api/logout/", LogoutView.as_view(), name="logout"),
     path("admin/", admin.site.urls),
     path("api/", include(router.urls)),
