@@ -1,6 +1,7 @@
 from rest_framework.views import APIView
 from rest_framework.response import Response
-from django.contrib.auth import authenticate, login
+from rest_framework.permissions import IsAuthenticated
+from django.contrib.auth import authenticate, login, logout
 
 # Create your views here.
 class LoginView(APIView):
@@ -15,3 +16,19 @@ class LoginView(APIView):
             return Response(status=200)
         else:
             return Response(status=404)
+
+
+class LogoutView(APIView):
+    permission_classes = [IsAuthenticated]
+
+    def get(self, request):
+        logout(request)
+        return Response(status=200)
+
+
+class CheckLogin(APIView):
+    def get(self, request):
+        if request.user is not None:
+            return Response({"Response": "Yes"}, status=200)
+        else:
+            return Response({"Response": "No"}, status=200)
