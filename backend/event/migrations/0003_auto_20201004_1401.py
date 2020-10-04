@@ -6,18 +6,29 @@ from django.db import migrations, models
 class Migration(migrations.Migration):
 
     dependencies = [
-        ('event', '0002_auto_20201004_1344'),
+        ("event", "0002_auto_20201004_1344"),
     ]
 
     operations = [
         migrations.AddField(
-            model_name='event',
-            name='title',
+            model_name="event",
+            name="title",
             field=models.CharField(max_length=200, null=True),
         ),
         migrations.AddField(
-            model_name='event',
-            name='type',
-            field=models.CharField(choices=[('Sleep', 'Sleep'), ('Eat', 'Eat'), ('Exercise', 'Exercise'), ('Nap', 'Nap'), ('Leisure', 'Leisure'), ('Other', 'Other')], default='Sleep', max_length=20),
+            model_name="event",
+            name="type",
+            field=models.CharField(
+                choices=[
+                    ("Sleep", "Sleep"),
+                    ("Eat", "Eat"),
+                    ("Exercise", "Exercise"),
+                    ("Nap", "Nap"),
+                    ("Leisure", "Leisure"),
+                    ("Other", "Other"),
+                ],
+                default="Sleep",
+                max_length=20,
+            ),
         ),
     ]
