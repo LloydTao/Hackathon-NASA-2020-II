@@ -45,13 +45,13 @@ INSTALLED_APPS = [
 
 MIDDLEWARE = [
     "django.middleware.security.SecurityMiddleware",
-    "django_session_jwt.middleware.SessionMiddleware",
-    # "django.contrib.sessions.middleware.SessionMiddleware",
+    "django.contrib.sessions.middleware.SessionMiddleware",
     "django.middleware.common.CommonMiddleware",
     "django.middleware.csrf.CsrfViewMiddleware",
     "django.contrib.auth.middleware.AuthenticationMiddleware",
     "django.contrib.messages.middleware.MessageMiddleware",
     "django.middleware.clickjacking.XFrameOptionsMiddleware",
+    "django_session_jwt.middleware.SessionMiddleware",
 ]
 
 ROOT_URLCONF = "backend.urls"
@@ -141,6 +141,7 @@ STATIC_URL = "/static/"
 
 SESSION_COOKIE_NAME = "sessionid"
 
+
 DJANGO_SESSION_JWT = {
     # FIELDS should consist of tuples of (attrname, sname, lname) where:
     # - attrname is the name of a user object attribute. This can reference a
@@ -154,12 +155,10 @@ DJANGO_SESSION_JWT = {
         ("id", "id", "user_id"),
         ("username", "u", "username"),
         ("email", "e", "email"),
-        ("first_name", "fn", "first_name"),
-        ("last_name", "ln", "last_name"),
     ],
-    "CALLABLE": "accounts.callable.get_fields",
+    "CALLABLE": "django_session_jwt.get_fields",
     "KEY": SECRET_KEY,
     # The default, uncomment to override:
-    # "SESSION_FIELD": "sk",
+    # 'SESSION_FIELD': 'sk',
     "EXPIRES": 60 * 60 * 8,
 }
