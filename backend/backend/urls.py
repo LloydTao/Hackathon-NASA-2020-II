@@ -30,8 +30,8 @@ router.registry.extend(program_router.registry)
 router.registry.extend(schedule_router.registry)
 
 urlpatterns = [
+    path("admin/", admin.site.urls),
     path("api/login/", LoginView.as_view(), name="login"),
     path("api/logout/", LogoutView.as_view(), name="logout"),
-    path("admin/", admin.site.urls),
     path("api/", include(router.urls)),
 ]
