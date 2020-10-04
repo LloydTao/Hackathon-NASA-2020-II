@@ -70,13 +70,18 @@ class LoginUserTestCase(TestCase):
         User = get_user_model()
         User.objects.create_user(username="matt", password="matthewd")
 
-    def test_login(self):
+    def test_login_logout(self):
         url = reverse("login")
         # Test valid login
         response = self.client.post(
             url, {"username": "matt", "password": "matthewd"}, format="json"
         )
         self.assertEqual(response.status_code, status.HTTP_200_OK)
+        user = response.wsgi_request.user
+
+        url = reverse("logout")
+        response = self.client.get(url, format="json")
+        self.assertNotEqual(user, response.wsgi_request.user)
 
     def test_invalid_login(self):
         url = reverse("login")
