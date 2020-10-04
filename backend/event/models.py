@@ -23,3 +23,6 @@ class Event(models.Model):
     )
     start_time = models.DateTimeField(default=now, null=True, blank=False)
     end_time = models.DateTimeField(default=now, null=True, blank=False)
+
+    def __str__(self):
+        return str(self.title) + " >> " + str(self.schedule)

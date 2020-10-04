@@ -14,3 +14,6 @@ class Schedule(models.Model):
     )
     start_date = models.DateTimeField(default=now, null=True, blank=False)
     end_date = models.DateTimeField(default=now, null=True, blank=False)
+
+    def __str__(self):
+        return str(self.user) + " >> " + str(self.program)
