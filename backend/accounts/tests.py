@@ -63,6 +63,29 @@ class RegisterUserTestCase(TestCase):
         self.assertNotEqual(logged_in, None)
 
 
+class LoginUserTestCase(TestCase):
+    client = APIClient()
+
+    def setUp(self):
+        User = get_user_model()
+        User.objects.create_user(username="matt", password="matthewd")
+
+    def test_login(self):
+        url = reverse("login")
+        # Test valid login
+        response = self.client.post(
+            url, {"username": "matt", "password": "matthewd"}, format="json"
+        )
+        self.assertEqual(response.status_code, status.HTTP_200_OK)
+
+    def test_invalid_login(self):
+        url = reverse("login")
+        response = self.client.post(
+            url, {"username": "fake", "password": "fake"}, format="json"
+        )
+        self.assertEqual(response.status_code, status.HTTP_404_NOT_FOUND)
+
+
 class GetUsersTestCase(TestCase):
 
     client = APIClient()
