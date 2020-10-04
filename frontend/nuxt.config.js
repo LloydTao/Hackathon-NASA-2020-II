@@ -27,6 +27,8 @@ export default {
     '@nuxtjs/stylelint-module',
     // https://go.nuxtjs.dev/tailwindcss
     '@nuxtjs/tailwindcss',
+    // https://www.npmjs.com/package/@nuxtjs/moment
+    '@nuxtjs/moment',
   ],
 
   // Modules (https://go.nuxtjs.dev/config-modules)
@@ -38,10 +40,14 @@ export default {
     // https://go.nuxtjs.dev/content
     '@nuxt/content',
   ],
-
   // Axios module configuration (https://go.nuxtjs.dev/config-axios)
-  axios: {},
+  axios: {
+    proxy: true,
+  },
 
+  proxy: {
+    '/api/': { target: 'http://localhost:8000' },
+  },
   // Content module configuration (https://go.nuxtjs.dev/content-config)
   content: {},
 
