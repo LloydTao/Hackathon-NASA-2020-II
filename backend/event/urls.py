@@ -8,6 +8,6 @@ from .viewsets import EventViewSet
 # Take care when naming API routes.
 # https://restfulapi.net/resource-naming/
 router = routers.DefaultRouter()
-router.register(r"events", EventViewSet)
+router.register(r"events", EventViewSet, basename="event")
 
 urlpatterns = []

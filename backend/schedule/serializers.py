@@ -9,5 +9,8 @@ class ScheduleSerializer(serializers.HyperlinkedModelSerializer):
         fields = [
             "url",
             "id",
-            "title",
+            "user",
+            "program",
+            "start_date",
+            "end_date",
         ]

@@ -8,6 +8,6 @@ from .viewsets import ScheduleViewSet
 # Take care when naming API routes.
 # https://restfulapi.net/resource-naming/
 router = routers.DefaultRouter()
-router.register(r"schedules", ScheduleViewSet)
+router.register(r"schedules", ScheduleViewSet, basename="schedule")
 
 urlpatterns = []
