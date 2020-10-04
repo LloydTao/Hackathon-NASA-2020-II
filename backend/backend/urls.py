@@ -31,4 +31,5 @@ router.registry.extend(schedule_router.registry)
 urlpatterns = [
     path("admin/", admin.site.urls),
     path("api/", include(router.urls)),
+    path("api/", include("accounts.urls")),
 ]
