@@ -4,6 +4,7 @@ from rest_framework import viewsets
 from rest_framework.permissions import IsAuthenticatedOrReadOnly
 
 from .serializers import UserSerializer
+from .permissions import AllowIfRegistrationOrAuthenticated
 
 
 class UserViewSet(viewsets.ModelViewSet):
@@ -16,4 +17,4 @@ class UserViewSet(viewsets.ModelViewSet):
 
     serializer_class = UserSerializer
 
-    permission_classes = [IsAuthenticatedOrReadOnly]
+    permission_classes = [AllowIfRegistrationOrAuthenticated]

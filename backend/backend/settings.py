@@ -51,6 +51,7 @@ MIDDLEWARE = [
     "django.contrib.auth.middleware.AuthenticationMiddleware",
     "django.contrib.messages.middleware.MessageMiddleware",
     "django.middleware.clickjacking.XFrameOptionsMiddleware",
+    "django_session_jwt.middleware.SessionMiddleware",
 ]
 
 ROOT_URLCONF = "backend.urls"
@@ -135,3 +136,29 @@ USE_TZ = True
 # https://docs.djangoproject.com/en/3.1/howto/static-files/
 
 STATIC_URL = "/static/"
+
+# Django Session JWT
+
+SESSION_COOKIE_NAME = "sessionid"
+
+
+DJANGO_SESSION_JWT = {
+    # FIELDS should consist of tuples of (attrname, sname, lname) where:
+    # - attrname is the name of a user object attribute. This can reference a
+    #   nested object by using periods: related_object.attribute_name.
+    # - sname is the short form of this name, ideally a single char (unique).
+    #   this form is used within the JWT itself and should be short to reduce
+    #   storage.
+    # - lname is the long form of the name. This is the name that can be used
+    #   to access this value after the JWT is verified.
+    "FIELDS": [
+        ("id", "id", "user_id"),
+        ("username", "u", "username"),
+        ("email", "e", "email"),
+    ],
+    "CALLABLE": "django_session_jwt.get_fields",
+    "KEY": SECRET_KEY,
+    # The default, uncomment to override:
+    # 'SESSION_FIELD': 'sk',
+    "EXPIRES": 60 * 60 * 8,
+}
