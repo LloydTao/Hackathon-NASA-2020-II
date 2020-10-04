@@ -5,6 +5,19 @@ from schedule.models import Schedule
 
 
 class Event(models.Model):
+    title = models.CharField(max_length=200, null=True, blank=False)
+    type = models.CharField(
+        choices=(
+            ("Sleep", "Sleep"),
+            ("Eat", "Eat"),
+            ("Exercise", "Exercise"),
+            ("Nap", "Nap"),
+            ("Leisure", "Leisure"),
+            ("Other", "Other"),
+        ),
+        default="Sleep",
+        max_length=20,
+    )
     schedule = models.ForeignKey(
         Schedule, on_delete=models.CASCADE, null=True, blank=False
     )
